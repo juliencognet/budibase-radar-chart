@@ -1,0 +1,328 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "budibase-radar-chart",
+    "friendlyName": "budibase-radar-chart",
+    "description": "Component to display a radar chart",
+    "icon": "Channel",
+    "settings": [
+      {
+        "section": true,
+        "name": "Data Mapping",
+        "settings": [
+          {
+            "type": "dataProvider",
+            "label": "Data Provider",
+            "key": "dataProvider",
+            "required": true
+          },
+          {
+            "type": "select",
+            "label": "Categories and fields selection method",
+            "key": "selectionMethod",
+            "required": true,
+            "options": [
+              {"label":"list of numeric fields","value":"list_fields"}
+             ,{"label":"category and numeric value fields","value": "category_value_fields"}
+            ]
+          },
+          {
+            "type": "field",
+            "label": "Serie field",
+            "key": "serieField",
+            "info": "If left null, there will only be one DEFAULT serie."
+          },
+          {
+            "type": "field",
+            "label": "Category field",
+            "key": "categoryField",
+            "required": true,
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "category_value_fields"
+            }
+          },
+          {
+            "type": "field",
+            "label": "Value field",
+            "key": "valueField",
+            "required": true,
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "category_value_fields"
+            }            
+          },
+          {
+            "type": "select",
+            "label": "Aggregation method if several values for one category",
+            "key": "aggregationMethod",
+            "required": true,
+            "options": ["min","max","first","last"],
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "category_value_fields"
+            }            
+          },
+          {
+            "type": "field",
+            "label": "Value field 1",
+            "key": "valueField1",
+            "required": true,
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "text",
+            "label": "Label field 1",
+            "key": "labelField1",
+            "required": true,
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "field",
+            "label": "Value field 2",
+            "key": "valueField2",
+            "required": true,
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "text",
+            "label": "Label field 2",
+            "key": "labelField2",
+            "required": true,
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "field",
+            "label": "Value field 3",
+            "key": "valueField3",
+            "required": true,
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "text",
+            "label": "Label field 3",
+            "key": "labelField3",
+            "required": true,
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "field",
+            "label": "Value field 4",
+            "key": "valueField4",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "text",
+            "label": "Label field 4",
+            "key": "labelField4",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "field",
+            "label": "Value field 5",
+            "key": "valueField5",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "text",
+            "label": "Label field 5",
+            "key": "labelField5",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "field",
+            "label": "Value field 6",
+            "key": "valueField6",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "text",
+            "label": "Label field 6",
+            "key": "labelField6",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "field",
+            "label": "Value field 7",
+            "key": "valueField7",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "text",
+            "label": "Label field 7",
+            "key": "labelField7",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "field",
+            "label": "Value field 8",
+            "key": "valueField8",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "text",
+            "label": "Label field 8",
+            "key": "labelField8",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "field",
+            "label": "Value field 9",
+            "key": "valueField9",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "text",
+            "label": "Label field 9",
+            "key": "labelField9",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "field",
+            "label": "Value field 10",
+            "key": "valueField10",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          },
+          {
+            "type": "text",
+            "label": "Label field 10",
+            "key": "labelField10",
+            "dependsOn": {
+              "setting": "selectionMethod",
+              "value": "list_fields"
+            }            
+          }
+        ]
+      },
+      {
+        "section": true,
+        "name": "General options",
+        "settings": [
+          {
+            "type": "number",
+            "label": "Chart height",
+            "key": "chartHeight",
+            "required": true,
+            "defaultValue": 300
+          },
+          {
+            "type": "number",
+            "label": "Chart width",
+            "key": "chartWidth",
+            "info": "If left null, width will be 100%"
+          },          
+          {
+            "type": "text",
+            "label": "Chart title",
+            "key": "chartTitle"
+          }
+        ]
+      },      
+      {
+        "section": true,
+        "name": "Radar axis definition",
+        "settings": [
+          {
+            "type": "number",
+            "label": "Minimum value of radar axis",
+            "key": "minAxis"
+          },
+          {
+            "type": "number",
+            "label": "Maximum value of radar axis",
+            "key": "maxAxis"
+          },
+          {
+            "type": "number",
+            "label": "Number of ticks of X axis",
+            "key": "axisTickAmount"
+          }
+        ]
+      },      
+      {
+        "section": true,
+        "name": "Advanced options",
+        "settings": [
+          {
+            "type": "boolean",
+            "label": "Display of radar values",
+            "key": "displayDataLabels",
+            "defaultValue": false
+          },
+          {
+            "type": "text",
+            "label": "Advanced chart options",
+            "key": "advancedChartOptions",
+            "info": "Must be Javascript valid object (cf. https://apexcharts.com/docs/options)"
+          },
+          {
+            "type": "select",
+            "label": "Color palette",
+            "key": "colorPalette",
+            "required": true,
+            "default": "1",
+            "options": ["palette1","palette2","palette3","palette4","palette5","palette6","palette7","palette8","palette9","palette10"]
+          }
+        ]
+      }
+    ]
+  }
+}
