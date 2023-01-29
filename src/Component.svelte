@@ -138,6 +138,16 @@
   }
   options.dataLabels = { enabled: displayDataLabels , background: { enabled: true, borderRadius: 2}};
   options.theme = {palette : colorPalette };
+  options.plotOptions = { radar : 
+    {
+      polygons: {
+        strokeColor: '#e8e8e8',
+        fill: {
+            colors: ['#f8f8f8', '#fff']
+        }
+      }
+    }
+  };
 
   // Merge advanced chart options with options computed just before
   if (advancedChartOptions!=null){
@@ -147,20 +157,6 @@
   // ----------------------------------------------------------------
   // Manage data of the chart
   options.series = [];
-
-  
-  /*options.series = [
-    {
-      name: "Radar Series 1",
-      data: [45, 52, 38, 24, 33, 10]
-    },
-    {
-      name: "Radar Series 2",
-      data: [26, 21, 20, 6, 8, 15]
-    }
-  ]
-  options.labels = ['April', 'May', 'June', 'July', 'August', 'September']
-  */
     
   function nvl(labelName,fieldName){
     return labelName==null?fieldName:labelName;
@@ -201,7 +197,6 @@
             options.series.push({"name": element[serieField], "data": values});
           }
       } else if (selectionMethod == "category_value_fields"){
-        console.log("starting")
         if (serieField==null){
           options.series.push({"name":undefined,data: []});
         }
@@ -265,19 +260,19 @@
   <div use:chart={options} />
 {:else}
 <!-- Display error message of bad configuration -->
-<div class="spectrum-InLineAlert spectrum-InLineAlert--notice">
-  <div class="spectrum-InLineAlert-header">
-    Bubble chart configuration error
-    <svg class="spectrum-Icon spectrum-Icon--sizeM spectrum-InLineAlert-icon" focusable="false" aria-hidden="true">
-      <use xlink:href="#spectrum-icon-18-Alert" />
-    </svg>
+  <div class="spectrum-InLineAlert spectrum-InLineAlert--notice">
+    <div class="spectrum-InLineAlert-header">
+      Bubble chart configuration error
+      <svg class="spectrum-Icon spectrum-Icon--sizeM spectrum-InLineAlert-icon" focusable="false" aria-hidden="true">
+        <use xlink:href="#spectrum-icon-18-Alert" />
+      </svg>
+    </div>
+    <div class="spectrum-InLineAlert-content">
+      <ul>
+        {#each errorMessages as message}
+          <li>{message}</li>
+        {/each}
+      </ul>
+    </div>
   </div>
-  <div class="spectrum-InLineAlert-content">
-    <ul>
-      {#each errorMessages as message}
-        <li>{message}</li>
-      {/each}
-    </ul>
-  </div>
-</div>
 {/if}
