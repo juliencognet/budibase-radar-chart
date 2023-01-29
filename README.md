@@ -1,9 +1,8 @@
 # Budibase-radar-chart
 
 ## Description
-Budibase Radar Chart Component. 
-It allows you to add a radar to your budibase application. It must be inserted inside a data provider.
-
+Budibase Radar Chart Component. It allows you to add a radar to your budibase application. It must be inserted inside a data provider.
+ 
 ![](./radar_screenshot.PNG)
 
 Find out more about [Budibase](https://github.com/Budibase/budibase).

@@ -21,7 +21,7 @@ jobs:
           yarn
           yarn build
       - name: Perform Github Release
-        uses: softprops/action-gh-release@v0.1.15
+        uses: softprops/action-gh-release@v1
         with:
           name: v${{ env.RELEASE_VERSION }}
           tag_name: v${{ env.RELEASE_VERSION }}
